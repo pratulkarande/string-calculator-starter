@@ -17,9 +17,15 @@ class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(1, stringCalculator.add("1"));
 
- @Test
+    @Test
     public void numbers_Comma_Delimited_Should_BeSummed() {
         assertEquals(calculator.add("1,2"), 3);
         assertEquals(25, calculator.add("10,15"));
+
+    @Test
+    public void numbers_Newline_Delimited_Should_Be_Summed() {
+        assertEquals(calculator.add("1\n2"), 3);
+        assertEquals(calculator.add("11\n13"), 24);
+    }
     }
 }
